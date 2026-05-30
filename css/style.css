@@ -683,11 +683,11 @@ button {
   flex: 1;
   min-width: 1.3rem;
   height: 0.7rem;
-  background: transparent;
+  background: #f4f6fa;
   border: none;
   border-radius: 0.08rem;
   font-size: 0.26rem;
-  color: #4a5568;
+  color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -708,9 +708,9 @@ button {
 
 /* Form selection state */
 .option-btn.active {
-  background: #fff5f2;
+  background: #ffeaea;
   border: 1px solid #f43220;
-  color: #f43220;
+  color: #333;
   font-weight: bold;
 }
 
