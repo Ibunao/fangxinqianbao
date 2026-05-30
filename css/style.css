@@ -1,0 +1,1217 @@
+/* ======================================
+   Reset & Base Styles
+   ====================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 50px; /* Fallback, JS overrides this based on device-width */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "miui", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  color: #333;
+  background: #f2f5f8;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow-x: hidden;
+  line-height: 1.4;
+}
+
+a {
+  color: #F5523C;
+  text-decoration: none;
+}
+
+input, button, select, textarea {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ======================================
+   Page Container Constraints
+   ====================================== */
+.page {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 7.5rem; /* constrained for mobile design */
+  margin: 0 auto;
+  position: relative;
+  background: #f7f9fc;
+  box-shadow: 0 0 0.2rem rgba(0,0,0,0.05);
+}
+
+.page.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======================================
+   Unified Navigation Bar (White Header)
+   ====================================== */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0.88rem;
+  padding: 0 0.3rem;
+  background: #ffffff;
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.back-btn {
+  position: absolute;
+  left: 0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.6rem;
+  height: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.back-btn svg {
+  display: block;
+  stroke: #999999;
+}
+
+.nav-title {
+  font-size: 0.34rem;
+  font-weight: bold;
+  color: #666666;
+  letter-spacing: 0.01rem;
+}
+
+/* ======================================
+   Banner Image Section
+   ====================================== */
+.banner-image-container {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(180deg, #ff4c36 0%, #f43220 100%);
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo-svg {
+  display: block;
+}
+
+.brand-name {
+  font-size: 0.32rem;
+  font-weight: 800;
+  letter-spacing: 0.02rem;
+}
+
+.brand-divider {
+  opacity: 0.6;
+  font-size: 0.24rem;
+}
+
+.brand-rating {
+  font-size: 0.24rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Trust Wreath Wrapper */
+.trust-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  margin-bottom: 0.2rem;
+}
+
+.laurel {
+  width: 0.5rem;
+  height: 0.5rem;
+  opacity: 0.85;
+}
+
+.trust-text {
+  font-size: 0.42rem;
+  font-weight: bold;
+  letter-spacing: 0.04rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.banner-subtext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  font-size: 0.22rem;
+  opacity: 0.95;
+}
+
+.subtext-line {
+  opacity: 0.5;
+}
+
+.subtext-content {
+  letter-spacing: 0.01rem;
+}
+
+/* ======================================
+   Page 1: Cards & Content Styling
+   ====================================== */
+.page1-content {
+  position: relative;
+  z-index: 5;
+  padding-bottom: 1.6rem;
+  flex: 1;
+}
+
+.amount-card {
+  background: #ffffff;
+  margin: 0;
+  border-radius: 0;
+  padding: 0.45rem 0 0.35rem 0;
+  box-shadow: 0 0.08rem 0.24rem rgba(244, 50, 32, 0.06);
+}
+
+.amount-card-inner {
+  margin: 0 0.3rem;
+}
+
+.amount-label {
+  font-size: 0.26rem;
+  color: #666666;
+  text-align: center;
+  font-weight: 500;
+}
+
+.amount-value {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1a2d42; /* deep premium navy blue matching screenshots */
+  text-align: center;
+  margin: 0.1rem 0;
+  font-family: "DIN Alternate", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.02rem;
+}
+
+.rate-text {
+  font-size: 0.24rem;
+  color: #8c96a0;
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+.rate-highlight {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+/* Warm Pink Welfare Box */
+.welfare-container {
+  background: #fff5f2;
+  border-radius: 0.16rem;
+  padding: 0.22rem 0.2rem;
+  margin-bottom: 0.35rem;
+  border: 1px dashed rgba(245, 82, 60, 0.15);
+}
+
+.welfare-title {
+  font-size: 0.22rem;
+  color: #b05c4d;
+  text-align: center;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.welfare-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.welfare-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.welfare-icon {
+  width: 0.64rem;
+  height: 0.64rem;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(245, 82, 60, 0.08);
+}
+
+.welfare-icon svg {
+  display: block;
+}
+
+.welfare-text {
+  font-size: 0.22rem;
+  color: #f3523b;
+  font-weight: bold;
+}
+
+/* Fully Rounded Input Wrapper */
+.phone-input-section {
+  margin-bottom: 0.25rem;
+}
+
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f5f6f9;
+  border-radius: 0.44rem;
+  height: 0.88rem;
+  padding: 0 0.3rem;
+  border: 1px solid #ebebeb;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.phone-icon-span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.input-divider {
+  color: #ddd;
+  margin: 0 0.2rem;
+  font-size: 0.28rem;
+  user-select: none;
+}
+
+.phone-input {
+  flex: 1;
+  height: 100%;
+  font-size: 0.28rem;
+  color: #333333;
+}
+
+.phone-input::placeholder {
+  color: #a6b0bb;
+  font-size: 0.28rem;
+}
+
+/* Button & Diagonal Float Badge */
+.button-wrapper {
+  position: relative;
+  margin-bottom: 0.25rem;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badge-ribbon {
+  position: absolute;
+  right: 0.2rem;
+  top: -0.16rem;
+  z-index: 10;
+  background: linear-gradient(90deg, #ff953f 0%, #ff5230 100%);
+  color: #ffffff;
+  font-size: 0.18rem;
+  font-weight: bold;
+  padding: 0.04rem 0.12rem;
+  border-radius: 0.18rem 0.18rem 0.18rem 0.02rem;
+  box-shadow: 0 2px 6px rgba(255, 82, 48, 0.3);
+  letter-spacing: 0.01rem;
+}
+
+.btn-primary {
+  width: 100%;
+  height: 0.88rem;
+  background: linear-gradient(90deg, #ff6c47 0%, #f43220 100%);
+  color: #ffffff;
+  font-size: 0.32rem;
+  font-weight: bold;
+  border-radius: 0.44rem;
+  box-shadow: 0 0.06rem 0.18rem rgba(244, 50, 32, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s, opacity 0.2s;
+  letter-spacing: 0.02rem;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Agreement Text and Custom Circular Checkbox */
+.agreement-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.agreement-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.12rem;
+  cursor: pointer;
+}
+
+.agreement-checkbox {
+  display: none;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  width: 0.3rem;
+  height: 0.3rem;
+  min-width: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 50%; /* Circle Checkbox */
+  position: relative;
+  background: #ffffff;
+  margin-top: 0.02rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.agreement-checkbox:checked + .custom-checkbox {
+  background: #f43220;
+  border-color: #f43220;
+}
+
+.agreement-checkbox:checked + .custom-checkbox::after {
+  content: '';
+  position: absolute;
+  left: 0.08rem;
+  top: 0.03rem;
+  width: 0.08rem;
+  height: 0.14rem;
+  border: solid #ffffff;
+  border-width: 0 0.03rem 0.03rem 0;
+  transform: rotate(45deg);
+}
+
+.agreement-text {
+  font-size: 0.22rem;
+  color: #8c96a0;
+  line-height: 1.4;
+}
+
+.agreement-text a {
+  color: #333333;
+  font-weight: bold;
+}
+
+/* ======================================
+   Advantages Image Section
+   ====================================== */
+.advantages-image-container {
+  width: 100%;
+  padding: 0;
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.advantages-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+/* ======================================
+   Disclaimer Footnote
+   ====================================== */
+.footnote-section {
+  text-align: center;
+  padding: 0.3rem 0.5rem 0.5rem;
+  color: #a6b0bb;
+  font-size: 0.2rem;
+  line-height: 1.6;
+}
+
+.footnote-item {
+  margin-bottom: 0.04rem;
+}
+
+.footnote-section.download-footnote {
+  padding-bottom: 0.3rem;
+  margin-top: 0.1rem;
+}
+
+.icp {
+  margin-top: 0.15rem;
+  color: #a6b0bb;
+}
+
+/* Fixed Bottom Bar on Page 1 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 7.5rem;
+  background: #ffffff;
+  padding: 0.15rem 0.3rem;
+  padding-bottom: calc(0.15rem + env(safe-area-inset-bottom, 0));
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.03);
+  z-index: 100;
+  border-top: 1px solid #f2f2f2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.bottom-bar.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-bottom {
+  box-shadow: 0 4px 12px rgba(244, 50, 32, 0.25);
+}
+
+/* ======================================
+   Page 2: Form Styles
+   ====================================== */
+.congrats-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.congrats-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.form-container {
+  padding: 0.3rem;
+  background: #f5f6f9;
+  flex: 1;
+}
+
+.form-module {
+  background: #ffffff;
+  border-radius: 0.12rem;
+  padding: 0.3rem;
+  margin-bottom: 0.3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+  padding: 0.28rem 0;
+  border-bottom: 1px solid #f3f5f8;
+}
+
+.form-group:last-of-type {
+  border-bottom: none;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.28rem;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.required {
+  color: #f43220;
+  margin-left: 0.04rem;
+}
+
+/* Form Input Field */
+.form-input-wrapper {
+  background: #f7f9fc;
+  border-radius: 0.08rem;
+  border: 1px solid #e1e6eb;
+  overflow: hidden;
+}
+
+.form-input {
+  width: 100%;
+  height: 0.76rem;
+  padding: 0 0.25rem;
+  font-size: 0.28rem;
+  color: #333333;
+}
+
+.form-input::placeholder {
+  color: #b0bac5;
+  font-size: 0.28rem;
+}
+
+/* Form Row Layout - label + input/value on same line */
+.form-group-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.28rem 0;
+  border-bottom: 1px solid #f3f5f8;
+}
+
+.form-group-row:last-of-type {
+  border-bottom: none;
+}
+
+.form-input-right {
+  text-align: right;
+  border: none;
+  background: transparent;
+  font-size: 0.28rem;
+  color: #333;
+  width: 60%;
+}
+
+.form-input-right::placeholder {
+  color: #999;
+  font-size: 0.28rem;
+}
+
+/* Form Hint Text */
+.form-hint {
+  font-size: 0.28rem;
+  color: #999;
+  margin-left: 0.1rem;
+}
+
+.form-hint.tag-hint {
+  color: #f43220;
+  margin-left: 0;
+}
+
+/* City Selector */
+.city-select {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.city-value {
+  font-size: 0.28rem;
+  color: #333;
+}
+
+/* Custom Select Dropdown */
+.form-select-wrapper {
+  position: relative;
+  background: #f7f9fc;
+  border-radius: 0.08rem;
+  border: 1px solid #e1e6eb;
+  overflow: hidden;
+}
+
+.form-select {
+  width: 100%;
+  height: 0.76rem;
+  padding: 0 0.6rem 0 0.25rem;
+  font-size: 0.28rem;
+  color: #333333;
+}
+
+.form-select:invalid, .form-select option[value=""] {
+  color: #b0bac5;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Option Buttons & Pill Grid layout */
+.option-group {
+  display: flex;
+  gap: 0.16rem;
+  flex-wrap: wrap;
+}
+
+.option-btn {
+  flex: 1;
+  min-width: 1.3rem;
+  height: 0.7rem;
+  background: #f4f6fa;
+  border: 1px solid #e1e6eb;
+  border-radius: 0.08rem;
+  font-size: 0.26rem;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.25s ease;
+  padding: 0 0.1rem;
+}
+
+.option-group-wrap .option-btn {
+  flex: 0 0 calc(50% - 0.08rem);
+  margin-bottom: 0.16rem;
+}
+
+.option-group-wrap.multiple-select .option-btn {
+  flex: 0 0 calc(33.33% - 0.11rem);
+  margin-bottom: 0.16rem;
+}
+
+/* Form selection state */
+.option-btn.active {
+  background: #fff5f2;
+  border-color: #f43220;
+  color: #f43220;
+  font-weight: bold;
+}
+
+/* Floating Red/Orange Tag (提额 badge) */
+.mini-badge {
+  position: absolute;
+  right: -0.06rem;
+  top: -0.14rem;
+  background: linear-gradient(135deg, #ff8c3c 0%, #ff4220 100%);
+  color: #ffffff;
+  font-size: 0.14rem;
+  font-weight: bold;
+  padding: 0.02rem 0.08rem;
+  border-radius: 0.06rem;
+  box-shadow: 0 2px 4px rgba(255, 66, 32, 0.2);
+  line-height: 1;
+}
+
+.form-submit-section {
+  padding: 0.5rem 0 0.2rem;
+}
+
+.btn-submit {
+  box-shadow: 0 4px 12px rgba(244, 50, 32, 0.25);
+}
+
+/* ======================================
+   Page 3: Processing & Step Styles
+   ====================================== */
+.processing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 0.4rem;
+  background: #ffffff;
+  flex: 1;
+}
+
+.processing-icon-wrapper {
+  position: relative;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.processing-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0.04rem solid #f3f3f3;
+  border-top-color: #f43220;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.processing-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #fff5f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.processing-icon-symbol {
+  font-size: 0.52rem;
+  font-weight: bold;
+  color: #f43220;
+}
+
+.processing-title {
+  font-size: 0.34rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 0.15rem;
+}
+
+.processing-desc {
+  font-size: 0.24rem;
+  color: #8c96a0;
+  margin-bottom: 0.6rem;
+}
+
+/* Checklist Steps */
+.checklist {
+  width: 100%;
+  background: #f7f9fc;
+  border-radius: 0.16rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid #ebebeb;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eef1f6;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-icon {
+  display: flex;
+  align-items: center;
+  margin-top: 0.04rem;
+}
+
+.checklist-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.06rem;
+}
+
+.checklist-title-text {
+  font-size: 0.28rem;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.checklist-done .checklist-title-text {
+  color: #1a1a1a;
+}
+
+.checklist-sub-text {
+  font-size: 0.22rem;
+  color: #a6b0bb;
+}
+
+/* ======================================
+   Page 4: Pre-approval Result Styles
+   ====================================== */
+.result-content {
+  padding: 0.3rem;
+  flex: 1;
+}
+
+.result-phone-card {
+  display: flex;
+  align-items: center;
+  gap: 0.12rem;
+  background: #ffffff;
+  border-radius: 0.16rem;
+  padding: 0.25rem 0.3rem;
+  margin-bottom: 0.3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.015);
+  border: 1px solid #ebebeb;
+}
+
+.result-phone {
+  font-size: 0.32rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.result-phone-hint {
+  font-size: 0.22rem;
+  color: #8c96a0;
+}
+
+/* Limit card with score bubble */
+.result-card {
+  background: #ffffff;
+  border-radius: 0.2rem;
+  padding: 0.4rem 0.3rem;
+  margin-bottom: 0.3rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+  border: 1px solid #ebebeb;
+}
+
+.result-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-amount-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-card-label {
+  font-size: 0.24rem;
+  color: #8c96a0;
+  margin-bottom: 0.05rem;
+}
+
+.result-card-value {
+  font-size: 0.68rem;
+  font-weight: bold;
+  color: #1a2d42;
+  font-family: "DIN Alternate", "Helvetica Neue", Arial, sans-serif;
+}
+
+.result-tag-col {
+  margin-left: 0.15rem;
+}
+
+.result-tag-badge {
+  background: #fff5e6;
+  color: #ff9f43;
+  font-size: 0.2rem;
+  font-weight: bold;
+  padding: 0.06rem 0.15rem;
+  border-radius: 0.2rem;
+  border: 1px solid rgba(255, 159, 67, 0.25);
+  white-space: nowrap;
+}
+
+/* Matching score gauge circle */
+.result-score-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-bubble {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6c47 0%, #f43220 100%);
+  box-shadow: 0 4px 10px rgba(244, 50, 32, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-number {
+  font-size: 0.44rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: "DIN Alternate", "Helvetica Neue", Arial, sans-serif;
+}
+
+.score-percent {
+  font-size: 0.2rem;
+  color: rgba(255,255,255,0.85);
+  margin-left: 0.02rem;
+  margin-top: 0.12rem;
+}
+
+/* Warning bar */
+.result-warning-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.12rem;
+  background: #fff9f2;
+  border: 1px solid rgba(255, 159, 67, 0.15);
+  border-radius: 0.08rem;
+  padding: 0.18rem 0.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.result-warning-text {
+  font-size: 0.24rem;
+  color: #ff9f43;
+  font-weight: bold;
+}
+
+/* Scrollable legal agreement container */
+.agreement-box {
+  background: #ffffff;
+  border-radius: 0.16rem;
+  border: 1px solid #e1e6eb;
+  padding: 0.3rem;
+  margin-bottom: 0.4rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+}
+
+.agreement-box-header {
+  font-size: 0.28rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 0.15rem;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 0.15rem;
+  text-align: center;
+}
+
+.agreement-box-body {
+  height: 2.2rem;
+  overflow-y: auto;
+  font-size: 0.22rem;
+  color: #718096;
+  line-height: 1.6;
+  padding-right: 0.1rem;
+}
+
+/* Customized scrollbar for scroll area */
+.agreement-box-body::-webkit-scrollbar {
+  display: block;
+  width: 0.08rem;
+}
+
+.agreement-box-body::-webkit-scrollbar-track {
+  background: #f7f9fc;
+  border-radius: 0.04rem;
+}
+
+.agreement-box-body::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 0.04rem;
+}
+
+.result-submit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.active-agreement {
+  justify-content: center;
+}
+
+.btn-result {
+  box-shadow: 0 4px 12px rgba(244, 50, 32, 0.25);
+}
+
+/* ======================================
+   Page 5: Download App Layout
+   ====================================== */
+.download-content {
+  margin-top: -0.6rem;
+  position: relative;
+  z-index: 5;
+  padding: 0 0.3rem;
+  flex: 1;
+}
+
+.download-card {
+  background: #ffffff;
+  border-radius: 0.24rem;
+  padding: 0.5rem 0.35rem 0.4rem 0.35rem;
+  box-shadow: 0 8px 24px rgba(244, 50, 32, 0.05);
+  text-align: center;
+  border: 1px solid #ebebeb;
+}
+
+.download-amount-label {
+  font-size: 0.26rem;
+  color: #8c96a0;
+  font-weight: 500;
+}
+
+.download-amount-value {
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #1a2d42;
+  margin: 0.05rem 0 0.2rem;
+  font-family: "DIN Alternate", "Helvetica Neue", Arial, sans-serif;
+}
+
+.download-hint-text {
+  font-size: 0.24rem;
+  color: #666666;
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+}
+
+/* 3 actions icons */
+.download-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.45rem;
+}
+
+.download-action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+}
+
+.download-action-icon-circle {
+  width: 0.96rem;
+  height: 0.96rem;
+  border-radius: 50%;
+  background: #fff3f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-action-text {
+  font-size: 0.22rem;
+  color: #4a5568;
+  font-weight: bold;
+}
+
+.download-btn-container {
+  position: relative;
+  margin-bottom: 0.15rem;
+}
+
+.btn-download {
+  box-shadow: 0 4px 14px rgba(244, 50, 32, 0.3);
+}
+
+/* Finger micro-animations */
+.pointer-hands-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  font-size: 0.44rem;
+  margin-top: 0.15rem;
+  pointer-events: none;
+}
+
+.hand-pointing {
+  display: inline-block;
+}
+
+.left-pointing {
+  animation: bounceRight 0.8s ease-in-out infinite alternate;
+}
+
+.right-pointing {
+  animation: bounceLeft 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes bounceRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(0.12rem); }
+}
+
+@keyframes bounceLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-0.12rem); }
+}
+
+/* ======================================
+   Global Spin / Animations
+   ====================================== */
+.icon-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Toast alert overlay */
+.toast-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast-content {
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.12rem;
+  font-size: 0.28rem;
+  font-weight: 500;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.25s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================
+   Responsive Max-Width (Desktop Preview)
+   ====================================== */
+@media screen and (min-width: 750px) {
+  body {
+    display: flex;
+    justify-content: center;
+    background: #dde2eb;
+  }
+  
+  #app {
+    max-width: 750px;
+    width: 750px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12);
+    min-height: 100vh;
+    background: #f7f9fc;
+  }
+  
+  .page {
+    max-width: 750px;
+  }
+  
+  .bottom-bar {
+    max-width: 750px;
+  }
+}

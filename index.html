@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,viewport-fit=cover">
+  <title>放鑫钱包 - 预审通过</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // REM responsive calculation - 750px design width
+    (function(doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        reCalc = function() {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          var size = 100 * (clientWidth / 750);
+          if (size >= 100) size = 100;
+          docEl.style.fontSize = size + 'px';
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvent, reCalc, false);
+      doc.addEventListener('DOMContentLoaded', reCalc, false);
+      reCalc();
+    })(document, window);
+  </script>
+</head>
+<body>
+  <div id="app">
+
+    <!-- ==================== Page 1: Registration Landing ==================== -->
+    <div id="page1" class="page active">
+      <!-- Unified Header -->
+      <div class="nav-bar nav-bar-light">
+        <span class="back-btn" onclick="history.back()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </span>
+        <span class="nav-title">预审通过</span>
+      </div>
+
+      <!-- Banner Image Section (covers up to phone input) -->
+      <div class="banner-image-container">
+        <img src="images/index_banner.jpg" alt="放鑫钱包" class="banner-image" />
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="page1-content">
+        <!-- Main Form Card -->
+        <div class="amount-card">
+          <div class="amount-card-inner">
+            <!-- Phone input block -->
+            <div class="phone-input-section">
+              <div class="phone-input-wrapper">
+                <span class="phone-icon-span">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                  </svg>
+                </span>
+                <span class="input-divider">|</span>
+                <input type="tel" id="phoneInput" class="phone-input" placeholder="凭实名手机号获取额度（已加密）" maxlength="11">
+              </div>
+            </div>
+
+            <!-- Button Container with Diagonal Ribbon Badge -->
+            <div class="button-wrapper">
+              <div class="badge-ribbon">优质用户专享通道</div>
+              <button class="btn-primary btn-register" id="btnRegister1">去借钱</button>
+            </div>
+
+            <!-- Agreement checkbox selection -->
+            <div class="agreement-section">
+              <label class="agreement-label">
+                <input type="checkbox" id="agreeCheck" class="agreement-checkbox">
+                <span class="custom-checkbox"></span>
+                <span class="agreement-text">我已阅读并同意<a href="https://fxqb.kdbank.cn/bg-web/index.html?source=neibuceshi&tid=35#/protocol?pageType=2">《用户注册服务协议》</a><a href="https://fxqb.kdbank.cn/bg-web/index.html?source=neibuceshi&tid=35#/protocol?pageType=6">《隐私政策》</a></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Four Advantages Image Section -->
+        <div class="advantages-image-container">
+          <img src="images/index_advantages.jpg" alt="放鑫钱包四大优势" class="advantages-image" />
+        </div>
+
+        <!-- Disclaimer & Footnote -->
+        <div class="footnote-section">
+          <p class="footnote-item">贷款有风险，借款需谨慎</p>
+          <p class="footnote-item">请根据个人能力合理贷款，理性消费，避免逾期</p>
+          <p class="footnote-item">贷款额度、放款时间以实际审核结果为准</p>
+          <p class="footnote-item">综合年化利率7.2%-24%(单利)，具体以审批为准</p>
+          <p class="footnote-item">贷款资金由广州市螺金小额贷款有限公司等提供</p>
+          <p class="footnote-item icp">粤ICP备17012955号-1</p>
+        </div>
+      </div>
+
+      <!-- Fixed Bottom Button -->
+      <div class="bottom-bar">
+        <button class="btn-primary btn-bottom" id="btnRegister2">去借钱</button>
+      </div>
+    </div>
+
+    <!-- ==================== Page 2: Application Form ==================== -->
+    <div id="page2" class="page">
+      <!-- Unified Header -->
+      <div class="nav-bar nav-bar-light">
+        <span class="back-btn" onclick="navigateTo('page1')">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </span>
+        <span class="nav-title">预审通过</span>
+      </div>
+
+      <!-- Header congrats box - Image -->
+      <div class="congrats-section">
+        <img src="images/shenqing_banner.jpg" alt="恭喜通过额度初审" class="congrats-image">
+      </div>
+
+      <!-- Form Container -->
+      <div class="form-container">
+        <!-- Module 1: Basic Info -->
+        <div class="form-module">
+          <!-- 1. 真实姓名 -->
+          <div class="form-group-row">
+            <label class="form-label">真实姓名</label>
+            <input type="text" class="form-input-right" id="realName" placeholder="请输入真实姓名">
+          </div>
+
+          <!-- 2. 真实年龄 -->
+          <div class="form-group-row">
+            <label class="form-label">真实年龄</label>
+            <span class="form-hint">年龄在22-55周岁均可申请</span>
+          </div>
+
+          <!-- 3. 您的性别 -->
+          <div class="form-group">
+            <label class="form-label">您的性别</label>
+            <div class="option-group" data-field="gender">
+              <button class="option-btn" data-value="男">男</button>
+              <button class="option-btn" data-value="女">女</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 2: Loan Info -->
+        <div class="form-module">
+          <!-- 4. 您的期望金额 -->
+          <div class="form-group">
+            <label class="form-label">您的期望金额</label>
+            <span class="form-hint">最大额度满足您的需求</span>
+            <div class="option-group option-group-wrap" data-field="expectedAmount">
+              <button class="option-btn" data-value="1-5万">1-5万</button>
+              <button class="option-btn" data-value="5-10万">5-10万</button>
+              <button class="option-btn" data-value="10-20万">10-20万</button>
+              <button class="option-btn" data-value="20万以上">20万以上</button>
+            </div>
+          </div>
+
+          <!-- 5. 您的借款期限 -->
+          <div class="form-group">
+            <label class="form-label">您的借款期限</label>
+            <div class="option-group option-group-wrap" data-field="loanPeriod">
+              <button class="option-btn" data-value="3期">3期</button>
+              <button class="option-btn" data-value="6期">6期</button>
+              <button class="option-btn" data-value="9期">9期</button>
+              <button class="option-btn" data-value="12期">12期</button>
+            </div>
+          </div>
+
+          <!-- 6. 您的芝麻分 -->
+          <div class="form-group">
+            <label class="form-label">您的芝麻分</label>
+            <span class="form-hint">芝麻信用大</span>
+            <div class="option-group option-group-wrap" data-field="zhima">
+              <button class="option-btn" data-value="600以下">600以下</button>
+              <button class="option-btn" data-value="600-650">600-650</button>
+              <button class="option-btn" data-value="650-700">
+                650-700<span class="mini-badge">提额</span>
+              </button>
+              <button class="option-btn" data-value="700以上">
+                700以上<span class="mini-badge">提额</span>
+              </button>
+              <button class="option-btn" data-value="无">无</button>
+            </div>
+          </div>
+
+          <!-- 7. 您的资产 (多选) -->
+          <div class="form-group">
+            <label class="form-label">您的资产</label>
+            <span class="form-hint">(多选)</span>
+            <span class="form-hint tag-hint">资产越多额度越高</span>
+            <div class="option-group option-group-wrap multiple-select" data-field="assets">
+              <button class="option-btn" data-value="房产">
+                房产<span class="mini-badge">提额</span>
+              </button>
+              <button class="option-btn" data-value="车产">
+                车产<span class="mini-badge">提额</span>
+              </button>
+              <button class="option-btn" data-value="公积金">
+                公积金<span class="mini-badge">提额</span>
+              </button>
+              <button class="option-btn" data-value="社保">社保</button>
+              <button class="option-btn" data-value="商业保险">商业保险</button>
+              <button class="option-btn" data-value="企业主">
+                企业主<span class="mini-badge">提额</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 3: City -->
+        <div class="form-module">
+          <!-- 8. 贷款申请城市 -->
+          <div class="form-group-row">
+            <label class="form-label">贷款申请城市</label>
+            <div class="city-select">
+              <span class="city-value">上海市/上海市</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-submit-section">
+          <button class="btn-primary btn-submit" id="btnSubmitForm">获取额度</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== Page 3: Processing Assessment ==================== -->
+    <div id="page3" class="page">
+      <!-- Unified Header -->
+      <div class="nav-bar nav-bar-light">
+        <span class="back-btn" onclick="navigateTo('page2')">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </span>
+        <span class="nav-title">额度申请</span>
+      </div>
+
+      <div class="processing-content">
+        <div class="processing-icon-wrapper">
+          <div class="processing-ring"></div>
+          <div class="processing-icon">
+            <span class="processing-icon-symbol">¥</span>
+          </div>
+        </div>
+
+        <h2 class="processing-title">您的信息正在认证中...</h2>
+        <p class="processing-desc">您就已提交的资料，正在为您最新评估额度</p>
+
+        <div class="checklist">
+          <div class="checklist-item checklist-done" id="check1">
+            <span class="checklist-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#52C41A"/><path d="M6 10l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="checklist-info">
+              <span class="checklist-title-text">申请额度</span>
+              <span class="checklist-sub-text">获取您的期望额度</span>
+            </div>
+          </div>
+          <div class="checklist-item" id="check2">
+            <span class="checklist-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#ddd"/></svg>
+            </span>
+            <div class="checklist-info">
+              <span class="checklist-title-text">身份信息</span>
+              <span class="checklist-sub-text">验证您的身份信息</span>
+            </div>
+          </div>
+          <div class="checklist-item" id="check3">
+            <span class="checklist-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#ddd"/></svg>
+            </span>
+            <div class="checklist-info">
+              <span class="checklist-title-text">补充资料</span>
+              <span class="checklist-sub-text">根据资料为您匹配产品</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== Page 4: Pre-approval Result ==================== -->
+    <div id="page4" class="page">
+      <!-- Unified Header -->
+      <div class="nav-bar nav-bar-light">
+        <span class="back-btn" onclick="navigateTo('page1')">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </span>
+        <span class="nav-title">预审通过</span>
+      </div>
+
+      <div class="result-content">
+        <!-- Phone security box -->
+        <div class="result-phone-card">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+          <span class="result-phone" id="resultPhoneDisplay">138 **** 0000</span>
+          <span class="result-phone-hint">(实名认证手机号) 已进行隐私加密</span>
+        </div>
+
+        <!-- Pre-approval limit and rate gauge -->
+        <div class="result-card">
+          <div class="result-card-row">
+            <div class="result-amount-col">
+              <span class="result-card-label">评估额度 (元)</span>
+              <span class="result-card-value">200,000</span>
+            </div>
+            <!-- Rate capsule -->
+            <div class="result-tag-col">
+              <span class="result-tag-badge">已下发额度2年</span>
+            </div>
+            <!-- Gauge/score percentage bubble -->
+            <div class="result-score-col">
+              <div class="score-bubble">
+                <span class="score-number">82</span>
+                <span class="score-percent">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Warning bar -->
+        <div class="result-warning-bar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9F43" stroke-width="2.5">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <span class="result-warning-text">个人信息及基本审核协议</span>
+        </div>
+
+        <!-- Agreement scrollable box -->
+        <div class="agreement-box">
+          <div class="agreement-box-header">个人信息共享授权协议</div>
+          <div class="agreement-box-body">
+            <p><strong>【特别提示】</strong></p>
+            <p>为您顺利提供广州市螺金小额贷款有限公司等持牌金融机构的评估及借贷推荐服务，本平台（以下简称“本平台”）需与我们的合作机构分享您的申请资料、您的个人敏感信息。为保护您的合法权益，请您认真阅读并全面理解本《个人信息共享授权协议》（以下简称“本协议”），在您勾选同意此协议并提交后，即代表您授权我们向第三方共享您的个人信息。</p>
+            <p><strong>一、信息授权范围</strong></p>
+            <p>您同意并授权：我们向合法合作的第三方小额贷款公司、持牌消费金融机构、征信评估机构共享您的真实姓名、手机号码、真实年龄、性别、期望金额、资产信息（房产、车产、公积金等）、芝麻信用状况、婚姻及职业等数据。</p>
+            <p><strong>二、共享目的与保障</strong></p>
+            <p>上述共享旨在完成您对贷款产品匹配度、匹配额度以及放款资格的科学预估和综合评级。我们将通过行业标准的传输加密算法（如AES-256）及脱敏技术对您提供的数据进行严密存储与加密，未经您单独授权或法定事由，我们不会向除必要金融审核方之外的无关单位泄露。</p>
+          </div>
+        </div>
+
+        <!-- Agree button active area -->
+        <div class="result-submit-section">
+          <label class="agreement-label active-agreement">
+            <input type="checkbox" id="resultAgreeCheck" class="agreement-checkbox">
+            <span class="custom-checkbox"></span>
+            <span class="agreement-text">《个人信息共享授权协议》已仔细阅读并同意</span>
+          </label>
+          <button class="btn-primary btn-result" id="btnResult">同意协议激活额度</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== Page 5: App Download ==================== -->
+    <div id="page5" class="page">
+      <!-- Unified Header -->
+      <div class="nav-bar nav-bar-light">
+        <span class="back-btn" onclick="navigateTo('page4')">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </span>
+        <span class="nav-title">预审通过</span>
+      </div>
+
+      <!-- Top Red Banner -->
+      <div class="banner-gradient short-banner">
+        <div class="brand-row">
+          <div class="brand-logo-container">
+            <svg width="32" height="32" viewBox="0 0 32 32" class="brand-logo-svg">
+              <rect x="2" y="2" width="28" height="28" rx="6" fill="#FFF"/>
+              <rect x="4" y="4" width="24" height="24" rx="4" fill="#F5523C"/>
+              <text x="16" y="21" text-anchor="middle" fill="#FFF" font-size="14" font-weight="bold">鑫</text>
+            </svg>
+          </div>
+          <span class="brand-name">放鑫钱包</span>
+          <span class="brand-divider">|</span>
+          <span class="brand-rating">持牌·安全·专业</span>
+        </div>
+        <div class="trust-banner">
+          <svg class="laurel laurel-left" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8">
+            <path d="M10 20C7 17 6 13 6 9M6 18c-1-1-3-1-4-1m4-3c-1.5 0-3-.5-4-1.5m4-3c-1.5-1-3-1-4-2.5m4-2C5 6 4 4.5 3.5 3m6.5 14c-1-1-2-1.5-3.5-1.5M10 6c0-1-1-2-2-3"/>
+          </svg>
+          <span class="trust-text">年度安全可信赖平台</span>
+          <svg class="laurel laurel-right" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8">
+            <path d="M14 20C17 17 18 13 18 9M18 18c1-1 3-1 4-1m-4-3c1.5 0 3-.5 4-1.5m-4-3c1.5-1 3-1 4-2.5m-4-2c1-1.5 2-3 2.5-4.5M14 6c0-1 1-2 2-3"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Main Download Card Content -->
+      <div class="download-content">
+        <div class="download-card">
+          <p class="download-amount-label">最高可借额度 (元)</p>
+          <p class="download-amount-value">200,000</p>
+          <p class="download-hint-text">根据您的综合信用评估，请下载 APP 进行借款</p>
+
+          <!-- 3 circular icons row -->
+          <div class="download-actions">
+            <div class="download-action-item">
+              <div class="download-action-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5523C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </div>
+              <span class="download-action-text">下载APP</span>
+            </div>
+            <div class="download-action-item">
+              <div class="download-action-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5523C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+              </div>
+              <span class="download-action-text">查看额度</span>
+            </div>
+            <div class="download-action-item">
+              <div class="download-action-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5523C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <line x1="12" y1="4" x2="12" y2="20"/>
+                </svg>
+              </div>
+              <span class="download-action-text">申请提现</span>
+            </div>
+          </div>
+
+          <!-- Download Action Button -->
+          <div class="download-btn-container">
+            <button class="btn-primary btn-download" id="btnDownload">去下载放鑫钱包APP</button>
+            <div class="pointer-hands-row">
+              <span class="hand-pointing left-pointing">👉</span>
+              <span class="hand-pointing right-pointing">👈</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footnote note of lender -->
+        <div class="footnote-section download-footnote">
+          <p class="footnote-item">温馨提示：本金融服务由持牌金融机构提供。实际授信额度、放款时间及年化利率以审核为准，请根据个人还款能力理性借贷，避免逾期。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

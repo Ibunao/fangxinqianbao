@@ -1,0 +1,9 @@
+/bg-web/
+svg
+http://www.w3.org/2000/svg
+icon
+img
+image
+close-icon
+js/logo-51f13b06-1779882338117.js
+])}),`./assets/styles/${1==(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)?1:navigator.userAgent.toLowerCase().includes(
