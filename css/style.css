@@ -1149,20 +1149,20 @@ button {
 /* Rejection Card Styles */
 .rejection-card {
   text-align: center;
-  padding: 0.8rem 0.4rem 0.6rem;
+  padding: 0.6rem 0.5rem 0.5rem;
   margin-bottom: 0.3rem;
   background: #ffffff;
-  border-radius: 0;
-  box-shadow: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   position: relative;
   z-index: 1;
 }
 
 .rejection-icon-wrapper {
   position: relative;
-  width: 1.8rem;
-  height: 1.8rem;
-  margin: 0 auto 0.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0 auto 0.45rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1206,6 +1206,8 @@ button {
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 4px 12px rgba(245, 82, 60, 0.3));
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .rejection-title {
@@ -1307,7 +1309,9 @@ button {
 
 /* Retry Button */
 .btn-retry {
-  width: 100%;
+  width: 80%;
+  max-width: 5rem;
+  margin: 0 auto;
   background: linear-gradient(135deg, #f5523c 0%, #ff6b6b 100%);
   color: #ffffff;
   border: none;
@@ -1323,6 +1327,18 @@ button {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  animation: btnBreath 2s ease-in-out infinite;
+}
+
+@keyframes btnBreath {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 6px 20px rgba(245, 82, 60, 0.35);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 8px 28px rgba(245, 82, 60, 0.45);
+  }
 }
 
 .btn-retry::before {
@@ -1341,8 +1357,9 @@ button {
 }
 
 .btn-retry:active {
-  transform: translateY(-2px) scale(0.98);
+  transform: translateY(-2px) scale(0.97);
   box-shadow: 0 8px 24px rgba(245, 82, 60, 0.4);
+  animation: none;
 }
 
 /* Footer Note */
