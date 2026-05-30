@@ -540,6 +540,9 @@ button {
 }
 
 .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.28rem 0;
   border-bottom: 1px solid #f3f5f8;
 }
@@ -680,8 +683,8 @@ button {
   flex: 1;
   min-width: 1.3rem;
   height: 0.7rem;
-  background: #f4f6fa;
-  border: 1px solid #e1e6eb;
+  background: transparent;
+  border: none;
   border-radius: 0.08rem;
   font-size: 0.26rem;
   color: #4a5568;
@@ -706,7 +709,7 @@ button {
 /* Form selection state */
 .option-btn.active {
   background: #fff5f2;
-  border-color: #f43220;
+  border: 1px solid #f43220;
   color: #f43220;
   font-weight: bold;
 }
