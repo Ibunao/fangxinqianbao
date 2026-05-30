@@ -533,7 +533,7 @@ button {
 
 .form-module {
   background: #ffffff;
-  border-radius: 0.12rem;
+  border-radius: 0 0 0.12rem 0.12rem;
   padding: 0.3rem;
   margin-bottom: 0.3rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
