@@ -1097,7 +1097,7 @@ button {
    Page 4: Pre-approval Result Styles
    ====================================== */
 .result-content {
-  padding: 0;
+  padding: 0.3rem;
   flex: 1;
   background: linear-gradient(180deg, #fafbfc 0%, #f5f6f9 100%);
   min-height: calc(100vh - 0.88rem);
@@ -1149,8 +1149,8 @@ button {
 /* Rejection Card Styles */
 .rejection-card {
   text-align: center;
-  padding: 0.6rem 0.5rem 0.5rem;
-  margin-bottom: 0.3rem;
+  padding: 0.6rem 0.4rem 0.5rem;
+  margin: 0 0 0.3rem;
   background: #ffffff;
   border-radius: 0.2rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
@@ -1239,7 +1239,7 @@ button {
   background: #ffffff;
   border-radius: 0.2rem;
   padding: 0.45rem 0.4rem;
-  margin: 0 0.3rem 0.3rem;
+  margin: 0 0 0.3rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   border: 1px solid #f0f2f5;
 }
