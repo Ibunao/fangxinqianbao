@@ -128,15 +128,15 @@
           <!-- 2. 真实年龄 -->
           <div class="form-group-row">
             <label class="form-label">真实年龄</label>
-            <span class="form-hint">年龄在22-55周岁均可申请</span>
+            <input type="tel" class="form-input-right" id="realAge" placeholder="年龄在22-55周岁均可申请" maxlength="2">
           </div>
 
           <!-- 3. 您的性别 -->
-          <div class="form-group">
-            <label class="form-label">您的性别</label>
-            <div class="option-group" data-field="gender">
-              <button class="option-btn" data-value="男">男</button>
-              <button class="option-btn" data-value="女">女</button>
+          <div class="form-group-row">
+            <label class="form-label" style="display: inline-block; margin-right: 0.15rem; margin-bottom: 0;">性别</label>
+            <div class="option-group gender-group-inline" data-field="gender">
+              <button class="option-btn gender-btn-inline" data-value="男">男</button>
+              <button class="option-btn gender-btn-inline" data-value="女">女</button>
             </div>
           </div>
         </div>
@@ -145,9 +145,11 @@
         <div class="form-module">
           <!-- 4. 您的期望金额 -->
           <div class="form-group">
-            <label class="form-label">您的期望金额</label>
-            <span class="form-hint">最大额度满足您的需求</span>
-            <div class="option-group option-group-wrap" data-field="expectedAmount">
+            <div class="form-label-with-badge">
+              <label class="form-label form-label-bold" style="margin-right: 0.15rem; margin-bottom: 0;">您的期望金额</label>
+              <span class="orange-badge">最大程度满足您的需求</span>
+            </div>
+            <div class="option-group option-group-wrap two-columns" data-field="expectedAmount">
               <button class="option-btn" data-value="1-5万">1-5万</button>
               <button class="option-btn" data-value="5-10万">5-10万</button>
               <button class="option-btn" data-value="10-20万">10-20万</button>
@@ -157,8 +159,10 @@
 
           <!-- 5. 您的借款期限 -->
           <div class="form-group">
-            <label class="form-label">您的借款期限</label>
-            <div class="option-group option-group-wrap" data-field="loanPeriod">
+            <div class="form-label-with-badge">
+              <label class="form-label form-label-bold">您的借款期限</label>
+            </div>
+            <div class="option-group option-group-wrap three-columns" data-field="loanPeriod">
               <button class="option-btn" data-value="3期">3期</button>
               <button class="option-btn" data-value="6期">6期</button>
               <button class="option-btn" data-value="9期">9期</button>
@@ -168,9 +172,11 @@
 
           <!-- 6. 您的芝麻分 -->
           <div class="form-group">
-            <label class="form-label">您的芝麻分</label>
-            <span class="form-hint">芝麻信用大</span>
-            <div class="option-group option-group-wrap" data-field="zhima">
+            <div class="form-label-with-badge">
+              <label class="form-label form-label-bold" style="margin-right: 0.15rem; margin-bottom: 0;">您的芝麻分</label>
+              <span class="orange-badge">提额幅度大</span>
+            </div>
+            <div class="option-group option-group-wrap zhima-layout" data-field="zhima">
               <button class="option-btn" data-value="600以下">600以下</button>
               <button class="option-btn" data-value="600-650">600-650</button>
               <button class="option-btn" data-value="650-700">
@@ -185,10 +191,11 @@
 
           <!-- 7. 您的资产 (多选) -->
           <div class="form-group">
-            <label class="form-label">您的资产</label>
-            <span class="form-hint">(多选)</span>
-            <span class="form-hint tag-hint">资产越多额度越高</span>
-            <div class="option-group option-group-wrap multiple-select" data-field="assets">
+            <div class="form-label-with-badge">
+              <label class="form-label form-label-bold" style="margin-right: 0.15rem; margin-bottom: 0;">您的资产（多选）</label>
+              <span class="orange-badge">资产越多 额度越高</span>
+            </div>
+            <div class="option-group option-group-wrap multiple-select assets-layout" data-field="assets">
               <button class="option-btn" data-value="房产">
                 房产<span class="mini-badge">提额</span>
               </button>
@@ -207,13 +214,13 @@
           </div>
         </div>
 
-        <!-- Module 3: City -->
-        <div class="form-module">
+        <!-- Module 3: City (Dynamic, hidden by default) -->
+        <div class="form-module city-module" style="display: none;">
           <!-- 8. 贷款申请城市 -->
           <div class="form-group-row">
             <label class="form-label">贷款申请城市</label>
             <div class="city-select">
-              <span class="city-value">上海市/上海市</span>
+              <span class="city-value">加载中...</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                 <circle cx="12" cy="10" r="3"/>
@@ -247,7 +254,7 @@
         </div>
 
         <h2 class="processing-title">您的信息正在认证中...</h2>
-        <p class="processing-desc">您就已提交的资料，正在为您最新评估额度</p>
+        <p class="processing-desc">根据已提交的资料，正在为您重新评估额度</p>
 
         <div class="checklist">
           <div class="checklist-item checklist-done" id="check1">
@@ -256,25 +263,25 @@
             </span>
             <div class="checklist-info">
               <span class="checklist-title-text">申请额度</span>
-              <span class="checklist-sub-text">获取您的期望额度</span>
+              <span class="checklist-sub-text">收到您的额度申请</span>
             </div>
           </div>
-          <div class="checklist-item" id="check2">
+          <div class="checklist-item checklist-done" id="check2">
             <span class="checklist-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#ddd"/></svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#ffc8b4"/><path d="M6 10l3 3 5-5" stroke="#f43220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div class="checklist-info">
               <span class="checklist-title-text">身份信息</span>
-              <span class="checklist-sub-text">验证您的身份信息</span>
+              <span class="checklist-sub-text">合适您的身份信息</span>
             </div>
           </div>
-          <div class="checklist-item" id="check3">
+          <div class="checklist-item checklist-pending" id="check3">
             <span class="checklist-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#ddd"/></svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="4" cy="10" r="1.5" fill="#a0aec0"/><circle cx="10" cy="10" r="1.5" fill="#a0aec0"/><circle cx="16" cy="10" r="1.5" fill="#a0aec0"/></svg>
             </span>
             <div class="checklist-info">
               <span class="checklist-title-text">补充资料</span>
-              <span class="checklist-sub-text">根据资料为您匹配产品</span>
+              <span class="checklist-sub-text">根据资料为您匹配、产品</span>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ const state = {
     age: '',
     gender: '',
     expectedAmount: '',
+    loanPeriod: '', // 借款期限
     assets: [], // Array for multiple select
     zhima: '',
     applyIntent: '',
@@ -128,14 +129,28 @@ function initPage1() {
 // Page 2: Form Logic (Simplified fields)
 // ======================================
 function initPage2() {
+  // Try to get city information dynamically
+  tryGetCityInfo();
+
   // Option button selection (handles both single & multi-select groups)
   document.querySelectorAll('.option-group').forEach(group => {
     group.addEventListener('click', (e) => {
+      // Debug logging
+      console.log('Click detected on group:', group.dataset.field);
+      
       const btn = e.target.closest('.option-btn');
-      if (!btn) return;
+      if (!btn) {
+        console.log('No button found');
+        return;
+      }
+      
+      console.log('Button clicked:', btn.dataset.value);
 
       const field = group.dataset.field;
-      if (!field || !state.formData.hasOwnProperty(field)) return;
+      if (!field || !state.formData.hasOwnProperty(field)) {
+        console.log('Invalid field:', field);
+        return;
+      }
 
       const isMulti = group.classList.contains('multiple-select');
 
@@ -150,6 +165,7 @@ function initPage2() {
         });
         
         state.formData[field] = selectedValues;
+        console.log('Multi-select updated:', field, selectedValues);
       } else {
         // Deselect siblings
         group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
@@ -157,6 +173,7 @@ function initPage2() {
         btn.classList.add('active');
         
         state.formData[field] = btn.dataset.value;
+        console.log('Single-select updated:', field, btn.dataset.value);
       }
     });
   });
@@ -166,13 +183,20 @@ function initPage2() {
   if (btnSubmit) {
     btnSubmit.addEventListener('click', () => {
       const name = document.getElementById('realName').value.trim();
+      const age = document.getElementById('realAge')?.value.trim();
 
       if (!name) {
         showToast('请输入真实姓名');
         return;
       }
 
+      if (!age || age < 22 || age > 55) {
+        showToast('请输入22-55之间的年龄');
+        return;
+      }
+
       state.formData.name = name;
+      state.formData.age = age;
 
       // Validate option groups
       const optionFields = [
@@ -200,6 +224,105 @@ function initPage2() {
 
       navigateTo('page3');
     });
+  }
+}
+
+// ======================================
+// Dynamic City Detection
+// ======================================
+function tryGetCityInfo() {
+  // Try to get city from geolocation API or IP-based service
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        // Success - got location, but we need reverse geocoding
+        // For simplicity, we'll use a free IP-based API as fallback
+        fetchCityByIP();
+      },
+      (error) => {
+        // Error - user denied or unavailable, try IP-based
+        console.log('Geolocation error:', error.message);
+        fetchCityByIP();
+      },
+      { timeout: 5000 }
+    );
+  } else {
+    // Geolocation not supported, try IP-based
+    fetchCityByIP();
+  }
+}
+
+function fetchCityByIP() {
+  // Using a free IP geolocation API
+  fetch('https://ipapi.co/json/')
+    .then(response => response.json())
+    .then(data => {
+      if (data.city && data.region) {
+        // Successfully got city info, convert pinyin to Chinese
+        const cityName = convertPinyinToChinese(data.city);
+        const regionName = convertPinyinToChinese(data.region);
+        
+        const cityModule = document.querySelector('.city-module');
+        const cityValue = document.querySelector('.city-value');
+        if (cityModule && cityValue) {
+          cityValue.textContent = `${regionName}市/${cityName}市`;
+          cityModule.style.display = 'block';
+        }
+      } else {
+        // Failed to get city, hide the module
+        hideCityModule();
+      }
+    })
+    .catch(error => {
+      console.log('Failed to fetch city by IP:', error);
+      hideCityModule();
+    });
+}
+
+// Convert common pinyin city names to Chinese
+function convertPinyinToChinese(pinyin) {
+  const cityMap = {
+    'shanghai': '上海',
+    'beijing': '北京',
+    'guangzhou': '广州',
+    'shenzhen': '深圳',
+    'hangzhou': '杭州',
+    'nanjing': '南京',
+    'chengdu': '成都',
+    'wuhan': '武汉',
+    'tianjin': '天津',
+    'chongqing': '重庆',
+    'xian': '西安',
+    'suzhou': '苏州',
+    'zhengzhou': '郑州',
+    'changsha': '长沙',
+    'qingdao': '青岛',
+    'dalian': '大连',
+    'ningbo': '宁波',
+    'xiamen': '厦门',
+    'jinan': '济南',
+    'fuzhou': '福州',
+    'harbin': '哈尔滨',
+    'shenyang': '沈阳',
+    'kunming': '昆明',
+    'nanning': '南宁',
+    'hefei': '合肥',
+    'taiyuan': '太原',
+    'nanchang': '南昌',
+    'shijiazhuang': '石家庄',
+    'wenzhou': '温州',
+    'dongguan': '东莞',
+    'foshan': '佛山'
+  };
+  
+  const lowerPinyin = pinyin.toLowerCase().trim();
+  return cityMap[lowerPinyin] || pinyin; // Return original if not in map
+}
+
+function hideCityModule() {
+  const cityModule = document.querySelector('.city-module');
+  if (cityModule) {
+    cityModule.style.display = 'none';
   }
 }
 
