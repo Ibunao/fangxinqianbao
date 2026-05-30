@@ -563,6 +563,10 @@ button {
   margin-bottom: 0;
 }
 
+.form-group .form-label {
+  margin-bottom: 0;
+}
+
 .required {
   color: #f43220;
   margin-left: 0.04rem;
