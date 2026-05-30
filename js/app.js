@@ -49,7 +49,7 @@ function navigateTo(pageId) {
     startProcessingAnimation();
   }
   if (pageId === 'page4') {
-    populateResultPage();
+    initPage4();
   }
 }
 
@@ -385,42 +385,50 @@ function updateCheckIcon(element, status) {
 }
 
 // ======================================
-// Page 4: Pre-approval Result
+// Page 4: Pre-approval Result (Rejected)
 // ======================================
-function populateResultPage() {
-  const { phone } = state.formData;
-
-  // Format phone display with privacy stars: e.g. 138 **** 1234
-  const displayEl = document.getElementById('resultPhoneDisplay');
-  if (displayEl && phone) {
-    const formatted = phone.slice(0, 3) + ' **** ' + phone.slice(-4);
-    displayEl.textContent = formatted;
-  }
-}
-
 function initPage4() {
-  const btnResult = document.getElementById('btnResult');
-  const agreeCheck = document.getElementById('resultAgreeCheck');
-
-  if (btnResult) {
-    btnResult.addEventListener('click', () => {
-      if (!agreeCheck || !agreeCheck.checked) {
-        showToast('请仔细阅读并勾选同意个人信息共享授权协议');
-        return;
-      }
-      navigateTo('page5');
-    });
-  }
-}
-
-// ======================================
-// Page 5: Download App Logic
-// ======================================
-function initPage5() {
-  const btnDownload = document.getElementById('btnDownload');
-  if (btnDownload) {
-    btnDownload.addEventListener('click', () => {
-      showToast('正在跳转至放鑫钱包官方APP下载页面...');
+  // Add retry button event
+  const btnRetry = document.getElementById('btnRetry');
+  if (btnRetry) {
+    btnRetry.addEventListener('click', () => {
+      // Clear form data and go back to page 1
+      state.formData = {
+        phone: '',
+        name: '',
+        age: '',
+        gender: '',
+        expectedAmount: '',
+        loanPeriod: '',
+        assets: [],
+        zhima: '',
+        applyIntent: '',
+        carLoan: '',
+        education: '',
+        marriage: '',
+        occupation: ''
+      };
+      
+      // Reset form inputs
+      const phoneInput = document.getElementById('phoneInput');
+      if (phoneInput) phoneInput.value = '';
+      
+      const realName = document.getElementById('realName');
+      if (realName) realName.value = '';
+      
+      const realAge = document.getElementById('realAge');
+      if (realAge) realAge.value = '';
+      
+      // Reset all option buttons
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Reset checkbox
+      const agreeCheck = document.getElementById('agreeCheck');
+      if (agreeCheck) agreeCheck.checked = false;
+      
+      navigateTo('page1');
     });
   }
 }

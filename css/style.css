@@ -1097,8 +1097,266 @@ button {
    Page 4: Pre-approval Result Styles
    ====================================== */
 .result-content {
-  padding: 0.3rem;
+  padding: 0;
   flex: 1;
+  background: linear-gradient(180deg, #fafbfc 0%, #f5f6f9 100%);
+  min-height: calc(100vh - 0.88rem);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top decorative elements */
+.result-top-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.08;
+}
+
+.decoration-circle-1 {
+  width: 4rem;
+  height: 4rem;
+  background: radial-gradient(circle, #f5523c 0%, transparent 70%);
+  top: -1.5rem;
+  right: -1rem;
+}
+
+.decoration-circle-2 {
+  width: 3rem;
+  height: 3rem;
+  background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+  top: -0.5rem;
+  left: -0.8rem;
+}
+
+.decoration-circle-3 {
+  width: 2rem;
+  height: 2rem;
+  background: radial-gradient(circle, #ffa726 0%, transparent 70%);
+  top: 1rem;
+  right: 0.5rem;
+}
+
+/* Rejection Card Styles */
+.rejection-card {
+  text-align: center;
+  padding: 0.8rem 0.4rem 0.6rem;
+  margin-bottom: 0.3rem;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+
+.rejection-icon-wrapper {
+  position: relative;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0 auto 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rejection-icon-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffe8e8 0%, #ffd4d4 100%);
+  border-radius: 50%;
+  animation: rejectionPulse 2s ease-in-out infinite;
+}
+
+.rejection-icon-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(245, 82, 60, 0.2);
+  border-radius: 50%;
+  animation: ringExpand 2s ease-out infinite;
+}
+
+@keyframes ringExpand {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes rejectionPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+
+.rejection-icon-svg {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 4px 12px rgba(245, 82, 60, 0.3));
+}
+
+.rejection-title {
+  font-size: 0.42rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 0.24rem;
+  line-height: 1.4;
+  letter-spacing: 0.02rem;
+}
+
+.rejection-desc {
+  font-size: 0.28rem;
+  color: #718096;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 0.12rem;
+}
+
+.rejection-desc-sub {
+  font-size: 0.26rem;
+  color: #a0aec0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Tips Card */
+.tips-card {
+  background: #ffffff;
+  border-radius: 0.2rem;
+  padding: 0.45rem 0.4rem;
+  margin: 0 0.3rem 0.3rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border: 1px solid #f0f2f5;
+}
+
+.tips-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #f5f6f9;
+}
+
+.tips-title {
+  font-size: 0.32rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin: 0;
+  flex: 1;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #f7f8fa;
+  transition: all 0.2s ease;
+}
+
+.tips-item:last-child {
+  border-bottom: none;
+}
+
+.tips-item:hover {
+  background: #fafbfc;
+  margin: 0 -0.4rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.tips-icon-wrapper {
+  flex-shrink: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.02rem;
+}
+
+.tips-text {
+  flex: 1;
+  font-size: 0.28rem;
+  color: #4a5568;
+  line-height: 1.7;
+  padding-top: 0.08rem;
+}
+
+/* Retry Button */
+.btn-retry {
+  width: 100%;
+  background: linear-gradient(135deg, #f5523c 0%, #ff6b6b 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0;
+  font-size: 0.34rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(245, 82, 60, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-retry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-retry:hover::before {
+  left: 100%;
+}
+
+.btn-retry:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 8px 24px rgba(245, 82, 60, 0.4);
+}
+
+/* Footer Note */
+.result-footer-note {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.4rem;
+  text-align: center;
+}
+
+.result-footer-note p {
+  font-size: 0.22rem;
+  color: #a0aec0;
+  line-height: 1.8;
+  margin: 0;
 }
 
 .result-phone-card {

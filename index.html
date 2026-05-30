@@ -288,171 +288,98 @@
       </div>
     </div>
 
-    <!-- ==================== Page 4: Pre-approval Result ==================== -->
+    <!-- ==================== Page 4: Pre-approval Result (Rejected) ==================== -->
     <div id="page4" class="page">
       <!-- Unified Header -->
       <div class="nav-bar nav-bar-light">
         <span class="back-btn" onclick="navigateTo('page1')">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </span>
-        <span class="nav-title">预审通过</span>
+        <span class="nav-title">审核结果</span>
       </div>
 
       <div class="result-content">
-        <!-- Phone security box -->
-        <div class="result-phone-card">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-            <line x1="12" y1="18" x2="12.01" y2="18"/>
-          </svg>
-          <span class="result-phone" id="resultPhoneDisplay">138 **** 0000</span>
-          <span class="result-phone-hint">(实名认证手机号) 已进行隐私加密</span>
+        <!-- Top decorative gradient -->
+        <div class="result-top-decoration">
+          <div class="decoration-circle decoration-circle-1"></div>
+          <div class="decoration-circle decoration-circle-2"></div>
+          <div class="decoration-circle decoration-circle-3"></div>
         </div>
 
-        <!-- Pre-approval limit and rate gauge -->
-        <div class="result-card">
-          <div class="result-card-row">
-            <div class="result-amount-col">
-              <span class="result-card-label">评估额度 (元)</span>
-              <span class="result-card-value">200,000</span>
-            </div>
-            <!-- Rate capsule -->
-            <div class="result-tag-col">
-              <span class="result-tag-badge">已下发额度2年</span>
-            </div>
-            <!-- Gauge/score percentage bubble -->
-            <div class="result-score-col">
-              <div class="score-bubble">
-                <span class="score-number">82</span>
-                <span class="score-percent">%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Warning bar -->
-        <div class="result-warning-bar">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9F43" stroke-width="2.5">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-            <line x1="12" y1="9" x2="12" y2="13"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-          </svg>
-          <span class="result-warning-text">个人信息及基本审核协议</span>
-        </div>
-
-        <!-- Agreement scrollable box -->
-        <div class="agreement-box">
-          <div class="agreement-box-header">个人信息共享授权协议</div>
-          <div class="agreement-box-body">
-            <p><strong>【特别提示】</strong></p>
-            <p>为您顺利提供广州市螺金小额贷款有限公司等持牌金融机构的评估及借贷推荐服务，本平台（以下简称“本平台”）需与我们的合作机构分享您的申请资料、您的个人敏感信息。为保护您的合法权益，请您认真阅读并全面理解本《个人信息共享授权协议》（以下简称“本协议”），在您勾选同意此协议并提交后，即代表您授权我们向第三方共享您的个人信息。</p>
-            <p><strong>一、信息授权范围</strong></p>
-            <p>您同意并授权：我们向合法合作的第三方小额贷款公司、持牌消费金融机构、征信评估机构共享您的真实姓名、手机号码、真实年龄、性别、期望金额、资产信息（房产、车产、公积金等）、芝麻信用状况、婚姻及职业等数据。</p>
-            <p><strong>二、共享目的与保障</strong></p>
-            <p>上述共享旨在完成您对贷款产品匹配度、匹配额度以及放款资格的科学预估和综合评级。我们将通过行业标准的传输加密算法（如AES-256）及脱敏技术对您提供的数据进行严密存储与加密，未经您单独授权或法定事由，我们不会向除必要金融审核方之外的无关单位泄露。</p>
-          </div>
-        </div>
-
-        <!-- Agree button active area -->
-        <div class="result-submit-section">
-          <label class="agreement-label active-agreement">
-            <input type="checkbox" id="resultAgreeCheck" class="agreement-checkbox">
-            <span class="custom-checkbox"></span>
-            <span class="agreement-text">《个人信息共享授权协议》已仔细阅读并同意</span>
-          </label>
-          <button class="btn-primary btn-result" id="btnResult">同意协议激活额度</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== Page 5: App Download ==================== -->
-    <div id="page5" class="page">
-      <!-- Unified Header -->
-      <div class="nav-bar nav-bar-light">
-        <span class="back-btn" onclick="navigateTo('page4')">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </span>
-        <span class="nav-title">预审通过</span>
-      </div>
-
-      <!-- Top Red Banner -->
-      <div class="banner-gradient short-banner">
-        <div class="brand-row">
-          <div class="brand-logo-container">
-            <svg width="32" height="32" viewBox="0 0 32 32" class="brand-logo-svg">
-              <rect x="2" y="2" width="28" height="28" rx="6" fill="#FFF"/>
-              <rect x="4" y="4" width="24" height="24" rx="4" fill="#F5523C"/>
-              <text x="16" y="21" text-anchor="middle" fill="#FFF" font-size="14" font-weight="bold">鑫</text>
+        <!-- Rejection icon and message -->
+        <div class="result-card rejection-card">
+          <div class="rejection-icon-wrapper">
+            <div class="rejection-icon-bg"></div>
+            <div class="rejection-icon-ring"></div>
+            <svg class="rejection-icon-svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+              <circle cx="36" cy="36" r="30" fill="url(#rejectionGradient)"/>
+              <path d="M22 50L50 22M50 50L22 22" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="rejectionGradient" x1="6" y1="6" x2="66" y2="66" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ff6b6b"/>
+                  <stop offset="100%" stop-color="#f5523c"/>
+                </linearGradient>
+              </defs>
             </svg>
           </div>
-          <span class="brand-name">放鑫钱包</span>
-          <span class="brand-divider">|</span>
-          <span class="brand-rating">持牌·安全·专业</span>
+          <h2 class="rejection-title">很遗憾，暂未获得额度</h2>
+          <p class="rejection-desc">根据您的综合资质评估，暂时无法为您提供授信服务</p>
+          <p class="rejection-desc-sub">感谢您的支持与理解，建议您保持良好的信用记录，日后再试</p>
         </div>
-        <div class="trust-banner">
-          <svg class="laurel laurel-left" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8">
-            <path d="M10 20C7 17 6 13 6 9M6 18c-1-1-3-1-4-1m4-3c-1.5 0-3-.5-4-1.5m4-3c-1.5-1-3-1-4-2.5m4-2C5 6 4 4.5 3.5 3m6.5 14c-1-1-2-1.5-3.5-1.5M10 6c0-1-1-2-2-3"/>
-          </svg>
-          <span class="trust-text">年度安全可信赖平台</span>
-          <svg class="laurel laurel-right" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8">
-            <path d="M14 20C17 17 18 13 18 9M18 18c1-1 3-1 4-1m-4-3c1.5 0 3-.5 4-1.5m-4-3c1.5-1 3-1 4-2.5m-4-2c1-1.5 2-3 2.5-4.5M14 6c0-1 1-2 2-3"/>
-          </svg>
-        </div>
-      </div>
 
-      <!-- Main Download Card Content -->
-      <div class="download-content">
-        <div class="download-card">
-          <p class="download-amount-label">最高可借额度 (元)</p>
-          <p class="download-amount-value">200,000</p>
-          <p class="download-hint-text">根据您的综合信用评估，请下载 APP 进行借款</p>
-
-          <!-- 3 circular icons row -->
-          <div class="download-actions">
-            <div class="download-action-item">
-              <div class="download-action-icon-circle">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5523C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7 10 12 15 17 10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-              </div>
-              <span class="download-action-text">下载APP</span>
-            </div>
-            <div class="download-action-item">
-              <div class="download-action-icon-circle">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5523C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="12" y1="8" x2="12" y2="12"/>
-                  <line x1="12" y1="16" x2="12.01" y2="16"/>
-                </svg>
-              </div>
-              <span class="download-action-text">查看额度</span>
-            </div>
-            <div class="download-action-item">
-              <div class="download-action-icon-circle">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5523C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/>
-                  <line x1="12" y1="4" x2="12" y2="20"/>
-                </svg>
-              </div>
-              <span class="download-action-text">申请提现</span>
-            </div>
+        <!-- Tips card -->
+        <div class="result-card tips-card">
+          <div class="tips-card-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5523c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <h3 class="tips-title">提高通过率的小建议</h3>
           </div>
-
-          <!-- Download Action Button -->
-          <div class="download-btn-container">
-            <button class="btn-primary btn-download" id="btnDownload">去下载放鑫钱包APP</button>
-            <div class="pointer-hands-row">
-              <span class="hand-pointing left-pointing">👉</span>
-              <span class="hand-pointing right-pointing">👈</span>
-            </div>
-          </div>
+          <ul class="tips-list">
+            <li class="tips-item">
+              <div class="tips-icon-wrapper">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5523c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <span class="tips-text">保持良好信用记录，按时还款</span>
+            </li>
+            <li class="tips-item">
+              <div class="tips-icon-wrapper">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5523c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <span class="tips-text">完善个人资料，提高信用评分</span>
+            </li>
+            <li class="tips-item">
+              <div class="tips-icon-wrapper">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5523c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <span class="tips-text">稳定收入来源，增加还款能力证明</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Footnote note of lender -->
-        <div class="footnote-section download-footnote">
-          <p class="footnote-item">温馨提示：本金融服务由持牌金融机构提供。实际授信额度、放款时间及年化利率以审核为准，请根据个人还款能力理性借贷，避免逾期。</p>
+        <!-- Retry button -->
+        <div class="result-submit-section">
+          <button class="btn-primary btn-retry" id="btnRetry">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.12rem;">
+              <polyline points="1 4 1 10 7 10"/>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+            </svg>
+            返回首页重新申请
+          </button>
+        </div>
+
+        <!-- Footer note -->
+        <div class="result-footer-note">
+          <p>温馨提示：本金融服务由持牌金融机构提供</p>
+          <p>实际授信额度以审核为准，请理性借贷</p>
         </div>
       </div>
     </div>
